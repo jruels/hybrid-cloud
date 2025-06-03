@@ -14,19 +14,15 @@ Before starting, ensure you have the following:
    - Installation guide: [Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
    - Log in with `az login`.
 
-4. **Docker** installed on your local machine:
-   - **Windows/macOS**: Download and install from [Docker Desktop](https://www.docker.com/products/docker-desktop/).
-   - **Linux**: Follow the official [Docker Engine installation guide](https://docs.docker.com/engine/install/) for your distribution.
-
-5. **Python 3.8+** installed:
+4. **Python 3.8+** installed:
    - **Windows/macOS**: Download from [Python.org](https://www.python.org/downloads/).
    - **Linux**: Use your package manager, e.g., `sudo apt install python3`.
 
-6. **An AWS account** with permissions to create RDS instances.
+5. **An AWS account** with permissions to create RDS instances.
 
-7. **An Azure account** with permissions to create Azure Cache for Redis instances.
+6. **An Azure account** with permissions to create Azure Cache for Redis instances.
    
-8. **MySQL Client** installed (to connect to your RDS instance):  
+7. **MySQL Client** installed (to connect to your RDS instance):  
    - **Debian/Ubuntu**:  
      ```bash
      sudo apt update && sudo apt install mysql-client -y
