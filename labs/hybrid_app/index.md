@@ -228,6 +228,7 @@ output "redis_hostname" {
 
 output "redis_primary_access_key" {
     value     = azurerm_redis_cache.redis.primary_access_key
+    sensitive = true
 }
 ```
 
@@ -244,7 +245,12 @@ output "redis_primary_access_key" {
 
 2. **Note the Redis hostname and access key:**
 
-   After the apply completes, Terraform will output the Redis hostname and primary access key. Save these values for later use.
+   After the apply completes, Terraform will output the Redis hostname. To display the access key run 
+   ```bash
+   terraform output redis_primary_access_key
+   ```
+
+   Save these values for later use.
 
 ---
 
