@@ -1,5 +1,5 @@
 
-## 🧰 Prerequisites
+## Prerequisites
 
 Before starting, ensure you have the following:
 
@@ -30,16 +30,16 @@ Before starting, ensure you have the following:
    - **Debian/Ubuntu**:  
      ```bash
      sudo apt update && sudo apt install mysql-client -y
-     ```  
+     ```
    - **Red Hat/CentOS**:  
      ```bash
      sudo yum install mysql -y
-     ```  
+     ```
    - **macOS (Homebrew)**:  
      ```bash
      brew install mysql-client
      echo 'export PATH="/usr/local/opt/mysql-client/bin:$PATH"' >> ~/.bash_profile
-     ```  
+     ```
    - **Windows**:  
      NB: Run the following commands in administrator mode
      1. **Install Chocolatey** (if not already installed):  
@@ -47,14 +47,15 @@ Before starting, ensure you have the following:
         Set-ExecutionPolicy Bypass -Scope Process -Force
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
         iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-        ```  
+        ```
      2. **Install MySQL client** via Chocolatey:  
+        
         ```powershell
         choco install mysql -y
         ```
 ---
 
-## 🏗️ Step-by-Step Guide
+## Step-by-Step Guide
 
 ### 1. Set Up Project Directory
 
@@ -65,7 +66,7 @@ mkdir hybrid_app
 cd hybrid_app
 ```
 
-## 🛠️ Infrastructure Setup with Terraform
+## Infrastructure Setup with Terraform
 
 We'll create two separate Terraform configurations: one for AWS RDS MySQL and another for Azure Cache for Redis.
 
@@ -228,7 +229,7 @@ output "redis_hostname" {
 output "redis_primary_access_key" {
     value     = azurerm_redis_cache.redis.primary_access_key
 }
-   ```
+```
 
 1. **Initialize and apply the Terraform configuration:**
 
@@ -247,7 +248,7 @@ output "redis_primary_access_key" {
 
 ---
 
-## 🐍 Flask Application Setup
+## Flask Application Setup
 
 1. **Navigate back to the project root and create a directory for the Flask application:**
 
@@ -258,7 +259,7 @@ output "redis_primary_access_key" {
    ```
 
 2. **Create a virtual environment and activate it:**
-  **Please make sure you have installed Python before completing this task**
+    **Please make sure you have installed Python before completing this task**
 
    ```bash
    python -m venv venv
@@ -273,7 +274,7 @@ output "redis_primary_access_key" {
 
 4. **Create `flask_app/app.py` with the following content:**
    
- 
+
 
    ```python
    from flask import Flask, request
@@ -368,7 +369,7 @@ output "redis_primary_access_key" {
 
 ---
 
-## 🚀 Running the Application
+## Running the Application
 
 1. **Set environment variables:**
 
@@ -406,7 +407,7 @@ output "redis_primary_access_key" {
 
 ---
 
-## 🧪 Testing the Application
+## Testing the Application
 
 - **Record a visit:**
 
@@ -420,7 +421,7 @@ output "redis_primary_access_key" {
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 
 To avoid incurring charges:
 
